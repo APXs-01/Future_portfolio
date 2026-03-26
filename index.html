@@ -5,229 +5,293 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>L.P.S Liyanage — Portfolio</title>
   <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 </head>
 <body>
 
-  <!-- Left Sidebar -->
-  <aside class="sidebar">
-    <a href="https://github.com/APXs-01" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
-    <a href="https://www.linkedin.com/in/l-p-s-liyanage-290155386/" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
-    <a href="mailto:pradeepsripal.com@gmail.com" title="Email"><i class="fas fa-envelope"></i></a>
-  </aside>
-
   <!-- Navbar -->
   <nav class="navbar">
-    <div class="nav-logo">
-      <i class="fas fa-bolt"></i> Liyanage
-    </div>
+    <div class="nav-logo">LPS<span class="logo-dot">.</span></div>
     <ul class="nav-links" id="navLinks">
-      <li><a href="#home" class="active">#home</a></li>
-      <li><a href="#works">#works</a></li>
-      <li><a href="#about">#about-me</a></li>
-      <li><a href="#contacts">#contacts</a></li>
+      <li><a href="#home">Home</a></li>
+      <li><a href="#works">Projects</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#contacts">Contact</a></li>
     </ul>
-    <button class="hamburger" id="hamburger" aria-label="Toggle menu">
-      <span></span><span></span><span></span>
-    </button>
+    <div class="nav-right">
+      <a href="#contacts" class="nav-cta">Hire Me</a>
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
   </nav>
 
   <!-- Hero Section -->
   <section id="home" class="hero">
-    <div class="hero-text">
-      <h1>
-        Liyanage is a <span class="accent">software developer</span> and<br />
-        <span class="accent">IT undergraduate</span>
-      </h1>
-      <p class="hero-sub">He builds practical web applications where logic meets clean design</p>
-      <a href="#contacts" class="btn-outline">Contact me !!</a>
-    </div>
-    <div class="hero-image">
-      <div class="profile-img-wrap">
-        <img src="profile.png" alt="L.P.S Liyanage" />
+    <video class="hero-video" autoplay muted loop playsinline>
+      <source src="assets/hero-video.mp4" type="video/mp4" />
+    </video>
+    <div class="hero-overlay"></div>
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
+
+    <div class="hero-inner">
+      <div class="hero-left">
+        <div class="hero-badge">
+          <span class="badge-dot"></span>
+          Available for opportunities
+        </div>
+        <h1 class="hero-title">
+          Hi, I'm <span class="gradient-text">Liyanage</span><br />
+          <span class="hero-role">Software Developer</span>
+        </h1>
+        <p class="hero-desc">
+          IT undergraduate at SLIIT, building practical web applications
+          where logic meets clean, modern design.
+        </p>
+        <div class="hero-actions">
+          <a href="#works" class="btn-primary">View My Work</a>
+          <a href="#contacts" class="btn-ghost">Contact Me <i class="fas fa-arrow-right"></i></a>
+        </div>
+        <div class="hero-stats">
+          <div class="stat">
+            <span class="stat-num gradient-text">3rd</span>
+            <span class="stat-label">Year IT</span>
+          </div>
+          <div class="stat-div"></div>
+          <div class="stat">
+            <span class="stat-num gradient-text">SLIIT</span>
+            <span class="stat-label">University</span>
+          </div>
+          <div class="stat-div"></div>
+          <div class="stat">
+            <span class="stat-num gradient-text">MERN</span>
+            <span class="stat-label">Fav Stack</span>
+          </div>
+        </div>
       </div>
-      <div class="status-badge">
-        <span class="dot"></span> Currently studying at <strong>SLIIT</strong>
+
+      <div class="hero-right">
+        <div class="profile-frame">
+          <img src="profile.png" alt="L.P.S Liyanage" />
+          <div class="profile-ring"></div>
+        </div>
+        <div class="social-pill">
+          <a href="https://github.com/APXs-01" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
+          <a href="https://www.linkedin.com/in/l-p-s-liyanage-290155386/" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+          <a href="mailto:pradeepsripal.com@gmail.com" title="Email"><i class="fas fa-envelope"></i></a>
+        </div>
       </div>
-      <div class="dots-grid dots-1"></div>
-      <div class="square-deco"></div>
     </div>
 
-    <!-- Quote -->
-    <div class="quote-block">
-      <span class="q-mark open">"</span>
-      <p>With great power comes great responsibility — and a lot of debugging</p>
-      <span class="q-mark close">"</span>
-      <div class="q-author">— Every Developer Ever</div>
-    </div>
+    <a href="#works" class="scroll-down">
+      <span>Scroll</span>
+      <i class="fas fa-chevron-down"></i>
+    </a>
   </section>
 
   <!-- Projects Section -->
   <section id="works" class="section">
-    <div class="section-header">
-      <h2>#projects</h2>
-      <a href="#works" class="view-all">View all ——&gt;</a>
-    </div>
+    <div class="section-inner">
+      <div class="section-label">My Work</div>
+      <h2 class="section-title">Featured <span class="gradient-text">Projects</span></h2>
+      <p class="section-desc">A selection of projects I've built with passion and purpose.</p>
 
-    <div class="projects-grid">
+      <div class="projects-grid">
+        <div class="project-card">
+          <div class="card-top">
+            <div class="card-tags">
+              <span>HTML</span><span>CSS</span><span>JavaScript</span>
+            </div>
+            <div class="card-actions">
+              <a href="#" title="Live Demo"><i class="fas fa-external-link-alt"></i></a>
+              <a href="#" title="GitHub"><i class="fab fa-github"></i></a>
+            </div>
+          </div>
+          <div class="card-thumb card-thumb-1">
+            <div class="thumb-overlay"><i class="fas fa-eye"></i> View Project</div>
+          </div>
+          <div class="card-body">
+            <h3>Project One</h3>
+            <p>Description of your first project goes here. Explain what problem it solves.</p>
+          </div>
+        </div>
 
-      <div class="project-card">
-        <div class="card-thumb card-thumb-1">
-          <span>Project 1</span>
+        <div class="project-card">
+          <div class="card-top">
+            <div class="card-tags">
+              <span>React</span><span>Node.js</span><span>MySQL</span>
+            </div>
+            <div class="card-actions">
+              <a href="#" title="Live Demo"><i class="fas fa-external-link-alt"></i></a>
+              <a href="#" title="GitHub"><i class="fab fa-github"></i></a>
+            </div>
+          </div>
+          <div class="card-thumb card-thumb-2">
+            <div class="thumb-overlay"><i class="fas fa-eye"></i> View Project</div>
+          </div>
+          <div class="card-body">
+            <h3>Project Two</h3>
+            <p>Description of your second project goes here.</p>
+          </div>
         </div>
-        <div class="card-tags">
-          <span>HTML</span><span>CSS</span><span>JavaScript</span>
-        </div>
-        <h3>Project One</h3>
-        <p>Description of your first project goes here.</p>
-        <div class="card-links">
-          <a href="#" class="btn-sm">Live <i class="fas fa-arrow-right"></i></a>
-          <a href="#" class="btn-sm">GitHub <i class="fas fa-arrow-right"></i></a>
+
+        <div class="project-card">
+          <div class="card-top">
+            <div class="card-tags">
+              <span>Python</span><span>Flask</span><span>MongoDB</span>
+            </div>
+            <div class="card-actions">
+              <a href="#" title="Live Demo"><i class="fas fa-external-link-alt"></i></a>
+              <a href="#" title="GitHub"><i class="fab fa-github"></i></a>
+            </div>
+          </div>
+          <div class="card-thumb card-thumb-3">
+            <div class="thumb-overlay"><i class="fas fa-eye"></i> View Project</div>
+          </div>
+          <div class="card-body">
+            <h3>Project Three</h3>
+            <p>Description of your third project goes here.</p>
+          </div>
         </div>
       </div>
-
-      <div class="project-card">
-        <div class="card-thumb card-thumb-2">
-          <span>Project 2</span>
-        </div>
-        <div class="card-tags">
-          <span>React</span><span>Node.js</span><span>MySQL</span>
-        </div>
-        <h3>Project Two</h3>
-        <p>Description of your second project goes here.</p>
-        <div class="card-links">
-          <a href="#" class="btn-sm">Live <i class="fas fa-arrow-right"></i></a>
-          <a href="#" class="btn-sm">GitHub <i class="fas fa-arrow-right"></i></a>
-        </div>
-      </div>
-
-      <div class="project-card">
-        <div class="card-thumb card-thumb-3">
-          <span>Project 3</span>
-        </div>
-        <div class="card-tags">
-          <span>Python</span><span>Flask</span><span>MongoDB</span>
-        </div>
-        <h3>Project Three</h3>
-        <p>Description of your third project goes here.</p>
-        <div class="card-links">
-          <a href="#" class="btn-sm">Live <i class="fas fa-arrow-right"></i></a>
-          <a href="#" class="btn-sm">Cached <i class="fas fa-arrow-right"></i></a>
-        </div>
-      </div>
-
     </div>
   </section>
 
   <!-- Skills Section -->
   <section class="section skills-section">
-    <h2>#skills</h2>
-    <div class="skills-deco">
-      <div class="dots-grid"></div>
-      <div class="square-deco sm"></div>
-    </div>
-    <div class="skills-grid">
-      <div class="skill-box">
-        <div class="skill-title">Languages</div>
-        <div class="skill-items">JavaScript<br />Python<br />Java<br />PHP</div>
-      </div>
-      <div class="skill-box">
-        <div class="skill-title">Databases</div>
-        <div class="skill-items">MySQL<br />MongoDB<br />PostgreSQL</div>
-      </div>
-      <div class="skill-box">
-        <div class="skill-title">Tools</div>
-        <div class="skill-items">VS Code<br />Git<br />Figma<br />Postman</div>
-      </div>
-      <div class="skill-box">
-        <div class="skill-title">Other</div>
-        <div class="skill-items">HTML<br />CSS<br />REST API<br />Linux</div>
-      </div>
-      <div class="skill-box">
-        <div class="skill-title">Frameworks</div>
-        <div class="skill-items">React<br />Node.js<br />Express.js<br />Flask</div>
+    <div class="section-inner">
+      <div class="section-label">Expertise</div>
+      <h2 class="section-title">Skills & <span class="gradient-text">Technologies</span></h2>
+
+      <div class="skills-bento">
+        <div class="skill-card">
+          <div class="skill-icon"><i class="fas fa-code"></i></div>
+          <div class="skill-title">Languages</div>
+          <div class="skill-tags">
+            <span>JavaScript</span><span>Python</span><span>Java</span><span>PHP</span>
+          </div>
+        </div>
+        <div class="skill-card">
+          <div class="skill-icon"><i class="fas fa-database"></i></div>
+          <div class="skill-title">Databases</div>
+          <div class="skill-tags">
+            <span>MySQL</span><span>MongoDB</span><span>PostgreSQL</span>
+          </div>
+        </div>
+        <div class="skill-card">
+          <div class="skill-icon"><i class="fas fa-layer-group"></i></div>
+          <div class="skill-title">Frameworks</div>
+          <div class="skill-tags">
+            <span>React</span><span>Node.js</span><span>Express</span><span>Flask</span>
+          </div>
+        </div>
+        <div class="skill-card">
+          <div class="skill-icon"><i class="fas fa-tools"></i></div>
+          <div class="skill-title">Tools</div>
+          <div class="skill-tags">
+            <span>Git</span><span>VS Code</span><span>Figma</span><span>Postman</span>
+          </div>
+        </div>
+        <div class="skill-card wide">
+          <div class="skill-icon"><i class="fas fa-globe"></i></div>
+          <div class="skill-title">Web & Other</div>
+          <div class="skill-tags">
+            <span>HTML5</span><span>CSS3</span><span>REST API</span><span>Linux</span><span>Responsive Design</span>
+          </div>
+        </div>
       </div>
     </div>
   </section>
 
   <!-- About Me Section -->
   <section id="about" class="section about-section">
-    <div class="about-text">
-      <h2>#about-me</h2>
-      <p class="about-intro">Hello, I'm Liyanage!</p>
-      <p>
-        I'm a 3rd year Information Technology undergraduate at SLIIT, Sri Lanka.
-        I'm passionate about building web applications and solving real-world problems through code.
-      </p>
-      <p>
-        I enjoy working across the full stack — from designing clean UIs to building solid back-end systems.
-        I'm always learning new technologies and looking for opportunities to grow as a developer.
-      </p>
-      <a href="#" class="btn-outline sm">Read more <i class="fas fa-arrow-right"></i></a>
-
-      <div class="fun-facts">
-        <h3>#fun-facts</h3>
-        <div class="facts-tags">
-          <span>I love problem solving</span>
-          <span>I enjoy <strong>video games</strong></span>
-          <span>I'm into <strong>open source</strong></span>
-          <span>My favourite stack is <strong>MERN</strong></span>
-          <span>I'm a <strong>SLIIT</strong> student</span>
+    <div class="section-inner">
+      <div class="about-grid">
+        <div class="about-image-col">
+          <div class="about-frame">
+            <img src="profile.png" alt="L.P.S Liyanage" />
+          </div>
+          <div class="about-exp-card">
+            <span class="exp-num gradient-text">3+</span>
+            <span class="exp-label">Years Coding</span>
+          </div>
+        </div>
+        <div class="about-text-col">
+          <div class="section-label">About Me</div>
+          <h2 class="section-title">Passionate <span class="gradient-text">Developer</span></h2>
+          <p>I'm a 3rd year Information Technology undergraduate at SLIIT, Sri Lanka. I'm passionate about building web applications and solving real-world problems through code.</p>
+          <p>I enjoy working across the full stack — from designing clean UIs to building solid back-end systems. Always learning new technologies and growing as a developer.</p>
+          <div class="about-tags">
+            <span><i class="fas fa-gamepad"></i> Video Games</span>
+            <span><i class="fas fa-code-branch"></i> Open Source</span>
+            <span><i class="fas fa-brain"></i> Problem Solving</span>
+            <span><i class="fas fa-university"></i> SLIIT</span>
+            <span><i class="fas fa-layer-group"></i> MERN Stack</span>
+          </div>
+          <a href="#contacts" class="btn-primary">Get In Touch</a>
         </div>
       </div>
-    </div>
-    <div class="about-image">
-      <div class="profile-img-wrap sm">
-        <img src="profile.png" alt="L.P.S Liyanage" />
-      </div>
-      <div class="dots-grid dots-2"></div>
     </div>
   </section>
 
   <!-- Contacts Section -->
   <section id="contacts" class="section contacts-section">
-    <h2>#contacts</h2>
-    <div class="contacts-body">
-      <p>
-        I'm open to internship and freelance opportunities. If you have a project or
-        question, don't hesitate to reach out!
-      </p>
-      <div class="contact-cards">
-        <div class="contact-card">
-          <div class="contact-card-title">Message me here</div>
-          <div class="contact-item">
-            <i class="fab fa-linkedin"></i>
-            <a href="https://www.linkedin.com/in/l-p-s-liyanage-290155386/" target="_blank">L.P.S Liyanage</a>
+    <div class="section-inner">
+      <div class="section-label">Let's Talk</div>
+      <h2 class="section-title">Get In <span class="gradient-text">Touch</span></h2>
+      <p class="section-desc">Open to internship and freelance opportunities. Let's build something great together.</p>
+
+      <div class="contact-grid">
+        <a href="https://www.linkedin.com/in/l-p-s-liyanage-290155386/" target="_blank" class="contact-card">
+          <div class="contact-icon"><i class="fab fa-linkedin"></i></div>
+          <div>
+            <div class="contact-label">LinkedIn</div>
+            <div class="contact-val">L.P.S Liyanage</div>
           </div>
-          <div class="contact-item">
-            <i class="fas fa-envelope"></i>
-            <a href="mailto:pradeepsripal.com@gmail.com">pradeepsripal.com@gmail.com</a>
+          <i class="fas fa-arrow-right contact-arrow"></i>
+        </a>
+        <a href="mailto:pradeepsripal.com@gmail.com" class="contact-card">
+          <div class="contact-icon"><i class="fas fa-envelope"></i></div>
+          <div>
+            <div class="contact-label">Email</div>
+            <div class="contact-val">pradeepsripal.com@gmail.com</div>
           </div>
-          <div class="contact-item">
-            <i class="fas fa-phone"></i>
-            <span>0769879711</span>
+          <i class="fas fa-arrow-right contact-arrow"></i>
+        </a>
+        <div class="contact-card no-link">
+          <div class="contact-icon"><i class="fas fa-phone"></i></div>
+          <div>
+            <div class="contact-label">Phone</div>
+            <div class="contact-val">0769879711</div>
           </div>
         </div>
+        <a href="https://github.com/APXs-01" target="_blank" class="contact-card">
+          <div class="contact-icon"><i class="fab fa-github"></i></div>
+          <div>
+            <div class="contact-label">GitHub</div>
+            <div class="contact-val">APXs-01</div>
+          </div>
+          <i class="fas fa-arrow-right contact-arrow"></i>
+        </a>
       </div>
     </div>
   </section>
 
   <!-- Footer -->
   <footer class="footer">
-    <div class="footer-left">
-      <div class="footer-logo"><i class="fas fa-bolt"></i> Liyanage</div>
-      <div class="footer-sub">lpsliyanage.web.lk</div>
-      <div class="footer-sub">IT undergraduate &amp; developer</div>
-    </div>
-    <div class="footer-right">
-      <div class="footer-media-title">Media</div>
-      <div class="footer-icons">
+    <div class="footer-inner">
+      <div class="footer-logo">LPS<span class="logo-dot">.</span></div>
+      <p class="footer-copy">© 2026 L.P.S Liyanage — Built with passion</p>
+      <div class="footer-social">
         <a href="https://github.com/APXs-01" target="_blank"><i class="fab fa-github"></i></a>
         <a href="https://www.linkedin.com/in/l-p-s-liyanage-290155386/" target="_blank"><i class="fab fa-linkedin"></i></a>
         <a href="mailto:pradeepsripal.com@gmail.com"><i class="fas fa-envelope"></i></a>
       </div>
     </div>
-    <div class="footer-copy">© 2026. Made by L.P.S Liyanage</div>
   </footer>
 
   <script src="script.js"></script>
