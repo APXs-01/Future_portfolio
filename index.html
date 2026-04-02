@@ -18,7 +18,7 @@
     <ul class="nav-links" id="navLinks">
       <li><a href="#home">Home</a></li>
       <li><a href="#works">Projects</a></li>
-      <li><a href="#about">About</a></li>
+      <li><a href="#contacts">About</a></li>
       <li><a href="#contacts">Contact</a></li>
     </ul>
     <div class="nav-right">
@@ -29,79 +29,270 @@
     </div>
   </nav>
 
-  <!-- Hero Section -->
-  <section id="home" class="hero">
-    <video class="hero-video" autoplay muted loop playsinline>
-      <source src="assets/hero-video.mp4" type="video/mp4" />
-    </video>
-    <div class="hero-overlay"></div>
-    <div class="hero-wm-cover"></div>
-    <div class="blob blob-1"></div>
-    <div class="blob blob-2"></div>
+  <!-- Scrollytelling Hero Wrapper (350vh gives 250vh of scroll space) -->
+  <div class="scrolly-wrapper" id="scrollyWrapper">
+    <section id="home" class="hero scrolly-hero">
 
-    <div class="hero-inner">
-      <div class="hero-left">
-        <div class="hero-badge">
-          <span class="badge-dot"></span>
-          Available for opportunities
-        </div>
-        <h1 class="hero-title">
-          Hi, I'm <span class="gradient-text">Liyanage</span><br />
-          <span class="hero-role">Software Developer</span>
-        </h1>
-        <p class="hero-desc">
-          IT undergraduate at SLIIT, building practical web applications
-          where logic meets clean, modern design.
-        </p>
-        <div class="hero-actions">
-          <a href="#works" class="btn-primary">View My Work</a>
-          <a href="#contacts" class="btn-ghost">Contact Me <i class="fas fa-arrow-right"></i></a>
-        </div>
-        <div class="hero-stats">
-          <div class="stat">
-            <span class="stat-num gradient-text">3rd</span>
-            <span class="stat-label">Year IT</span>
+      <!-- Scroll-linked frame canvas (background layer) -->
+      <canvas id="heroCanvas" class="hero-canvas"></canvas>
+
+      <!-- Depth overlay -->
+      <div class="hero-overlay" id="heroOverlay"></div>
+
+      <!-- Veo watermark cover (bottom-right) -->
+      <div class="hero-wm-cover"></div>
+
+      <!-- Animated ambient blobs -->
+      <div class="blob blob-1" id="blob1"></div>
+      <div class="blob blob-2" id="blob2"></div>
+
+      <!-- Phase 1 hero layout -->
+      <div class="hero-inner" id="heroMain">
+        <div class="hero-left" id="heroLeft">
+          <div class="hero-badge">
+            <span class="badge-dot"></span>
+            Available for opportunities
           </div>
-          <div class="stat-div"></div>
-          <div class="stat">
-            <span class="stat-num gradient-text">SLIIT</span>
-            <span class="stat-label">University</span>
+          <h1 class="hero-title">
+            Hi, I'm <span class="gradient-text">Liyanage</span><br />
+            <span class="hero-role">Software Developer</span>
+          </h1>
+          <p class="hero-desc">
+            IT undergraduate at SLIIT, building practical web applications
+            where logic meets clean, modern design.
+          </p>
+          <div class="hero-actions">
+            <a href="#works" class="btn-primary">View My Work</a>
+            <a href="#contacts" class="btn-ghost">Contact Me <i class="fas fa-arrow-right"></i></a>
           </div>
-          <div class="stat-div"></div>
-          <div class="stat">
-            <span class="stat-num gradient-text">MERN</span>
-            <span class="stat-label">Fav Stack</span>
+          <div class="hero-stats">
+            <div class="stat">
+              <span class="stat-num gradient-text">3rd</span>
+              <span class="stat-label">Year IT</span>
+            </div>
+            <div class="stat-div"></div>
+            <div class="stat">
+              <span class="stat-num gradient-text">SLIIT</span>
+              <span class="stat-label">University</span>
+            </div>
+            <div class="stat-div"></div>
+            <div class="stat">
+              <span class="stat-num gradient-text">MERN</span>
+              <span class="stat-label">Fav Stack</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Profile card — persists all phases, pushes forward in Z -->
+        <div class="hero-right" id="heroRight">
+          <div class="profile-card glass-card" id="profileCard">
+            <div class="profile-frame">
+              <img src="profile.png" alt="L.P.S Liyanage" />
+              <div class="profile-ring"></div>
+            </div>
+            <div class="social-pill">
+              <a href="https://github.com/APXs-01" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
+              <a href="https://www.linkedin.com/in/l-p-s-liyanage-290155386/" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+              <a href="mailto:pradeepsripal.com@gmail.com" title="Email"><i class="fas fa-envelope"></i></a>
+            </div>
+            <div class="card-glow-border"></div>
           </div>
         </div>
       </div>
 
-      <div class="hero-right">
-        <div class="profile-frame">
-          <img src="profile.png" alt="L.P.S Liyanage" />
-          <div class="profile-ring"></div>
-        </div>
-        <div class="social-pill">
-          <a href="https://github.com/APXs-01" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
-          <a href="https://www.linkedin.com/in/l-p-s-liyanage-290155386/" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
-          <a href="mailto:pradeepsripal.com@gmail.com" title="Email"><i class="fas fa-envelope"></i></a>
-        </div>
-      </div>
-    </div>
+      <!-- (floating elements removed — clean 3-phase flow) -->
+      <div class="floating-elements" id="floatingElements" style="display:none">
 
-    <a href="#works" class="scroll-down">
-      <span>Scroll</span>
-      <i class="fas fa-chevron-down"></i>
-    </a>
-  </section>
+        <!-- Code snippet glass panel -->
+        <div class="float-panel code-panel" id="floatCode">
+          <div class="panel-header">
+            <div class="panel-dots">
+              <span class="pdot red"></span>
+              <span class="pdot yellow"></span>
+              <span class="pdot green"></span>
+            </div>
+            <span class="panel-filename">server.js</span>
+          </div>
+          <pre class="code-snippet"><code><span class="c-kw">import</span> <span class="c-var">express</span> <span class="c-kw">from</span> <span class="c-str">'express'</span>;
+<span class="c-kw">import</span> <span class="c-var">mongoose</span> <span class="c-kw">from</span> <span class="c-str">'mongoose'</span>;
+
+<span class="c-kw">const</span> <span class="c-var">app</span> = <span class="c-fn">express</span>();
+<span class="c-kw">await</span> <span class="c-var">mongoose</span>.<span class="c-fn">connect</span>(
+  <span class="c-var">process</span>.<span class="c-var">env</span>.<span class="c-prop">MONGO_URI</span>
+);
+
+app.<span class="c-fn">use</span>(<span class="c-str">'/api'</span>, <span class="c-var">router</span>);
+app.<span class="c-fn">listen</span>(<span class="c-num">5000</span>);</code></pre>
+        </div>
+
+        <!-- MERN stack glass panel -->
+        <div class="float-panel mern-panel" id="floatMern">
+          <div class="mern-label">Tech Stack</div>
+          <div class="mern-grid">
+            <div class="mern-item" id="mernM">
+              <div class="mern-icon mongo-icon">
+                <svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22"><path d="M17.193 9.555c-1.264-5.58-4.252-7.414-4.573-8.115-.28-.394-.53-.954-.735-1.44-.036.495-.055.685-.523 1.184-.723.566-4.438 3.682-4.74 10.02-.3 6.337 4.74 10.02 4.74 10.02s.16.21.16.476c0 .266.155.35.155.35s.028.015.074.015c.046 0 .074-.015.074-.015s.155-.084.155-.35c0-.266.16-.476.16-.476s5.04-3.683 4.74-10.02c-.056-1.217-.224-2.207-.487-3.029zm-5.33 13.905c-.017.024-.034.047-.052.07v-.09c.018.023.035.046.052.07z"/></svg>
+              </div>
+              <span>MongoDB</span>
+            </div>
+            <div class="mern-item" id="mernE">
+              <div class="mern-icon express-icon">
+                <svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22"><path d="M24 18.588a1.529 1.529 0 01-1.895-.72l-3.45-4.771-.5-.667-4.003 5.444a1.466 1.466 0 01-1.802.708l5.158-6.92-4.798-6.251a1.595 1.595 0 011.9.666l3.576 4.83 3.596-4.81a1.435 1.435 0 011.788-.668L21.708 7.9l-2.522 3.283a.666.666 0 000 .994l4.804 6.412zM.002 11.576l.42-2.075c1.154-4.103 5.858-5.81 9.094-3.27 1.895 1.489 2.368 3.597 2.275 5.973H1.116C.943 16.447 4.005 19.009 7.92 17.7a4.078 4.078 0 002.582-2.876c.207-.666.548-.78 1.174-.588a5.417 5.417 0 01-2.589 3.957 6.272 6.272 0 01-7.306-.933 6.575 6.575 0 01-1.64-3.858c-.013-.34-.508-.013-.139-.826zm1.108-.785h9.086c-.07-3.03-2.09-5.202-4.43-5.155-2.55.054-4.553 2.256-4.656 5.155z"/></svg>
+              </div>
+              <span>Express</span>
+            </div>
+            <div class="mern-item" id="mernR">
+              <div class="mern-icon react-icon">
+                <svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22"><circle cx="12" cy="11.999" r="2.14"/><path d="M12 16.876c-5.297 0-9.592-2.179-9.592-4.876S6.703 7.124 12 7.124s9.592 2.179 9.592 4.876-4.295 4.876-9.592 4.876zm0-8.877c-4.728 0-8.592 1.794-8.592 4.001S7.272 16.001 12 16.001s8.592-1.794 8.592-4-3.864-4.002-8.592-4.002z"/><path d="M7.674 19.942C5.078 18.497 3.514 16.382 3.514 14.3c0-2.08 1.564-4.194 4.16-5.639l.494.869C5.684 10.76 4.514 12.574 4.514 14.3c0 1.727 1.17 3.541 3.654 4.773l-.494.869zM16.326 19.942l-.494-.869C18.316 17.841 19.486 16.027 19.486 14.3c0-1.726-1.17-3.54-3.654-4.77l.494-.869c2.596 1.445 4.16 3.559 4.16 5.639 0 2.082-1.564 4.196-4.16 5.642z"/><path d="M8.168 4.058C9.61 3.199 11.207 2.938 12 2.938c.793 0 2.39.261 3.832 1.12l-.5.866C14.21 4.166 13.1 3.938 12 3.938s-2.21.228-3.332.886l-.5-.866zM4.514 9.7C4.514 7.618 6.078 5.503 8.674 4.058l.494.869C6.684 6.159 5.514 7.973 5.514 9.7c0 .478.077.962.231 1.444l-.952.308A6.503 6.503 0 014.514 9.7zm14.972 0c0-.478-.077-.962-.231-1.444l.952-.308C20.387 8.583 20.486 9.14 20.486 9.7c0 2.082-1.564 4.196-4.16 5.642l-.494-.869C18.316 13.24 19.486 11.427 19.486 9.7z"/></svg>
+              </div>
+              <span>React</span>
+            </div>
+            <div class="mern-item" id="mernN">
+              <div class="mern-icon node-icon">
+                <svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22"><path d="M11.998.016C5.37.016 0 5.388 0 12.016s5.37 11.999 11.998 11.999S24 18.644 24 12.016C24 5.388 18.626.016 11.998.016zM6.29 20.04a.776.776 0 01-.387-.108l-1.254-.74c-.186-.106-.096-.143-.036-.164.252-.088.302-.108.57-.261.027-.016.064-.008.092.006l.964.572c.034.02.083.02.113 0l3.754-2.166c.034-.02.056-.058.056-.1v-4.329c0-.042-.022-.082-.056-.102l-3.753-2.163c-.034-.02-.08-.02-.113 0L2.485 12.63c-.034.02-.056.06-.056.103v4.327c0 .042.022.08.056.099l1.027.594c.558.278.899-.05.899-.386V12.88c0-.06.05-.11.112-.11h.49c.06 0 .11.05.11.11v4.49c0 .754-.41 1.19-1.126 1.19-.22 0-.393 0-.875-.238l-.983-.565a.779.779 0 01-.388-.672v-4.33c0-.276.147-.533.387-.671l3.752-2.167a.803.803 0 01.776 0l3.754 2.167c.24.138.388.395.388.671v4.33a.779.779 0 01-.388.672L6.67 19.932a.782.782 0 01-.38.108zm10.3-.459a.782.782 0 01-.776 0l-3.753-2.166a.778.778 0 01-.387-.671v-4.33c0-.277.147-.534.387-.672l3.753-2.165a.802.802 0 01.776 0l3.753 2.165c.24.138.388.395.388.671v4.33a.78.78 0 01-.388.671l-3.753 2.167z"/></svg>
+              </div>
+              <span>Node.js</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- UI wireframe panel -->
+        <div class="float-panel wire-panel" id="floatWire">
+          <div class="wf-title">UI Architecture</div>
+          <div class="wireframe-demo">
+            <div class="wf-header-bar"></div>
+            <div class="wf-body">
+              <div class="wf-sidebar">
+                <div class="wf-line"></div>
+                <div class="wf-line short"></div>
+                <div class="wf-line"></div>
+                <div class="wf-line short"></div>
+                <div class="wf-line"></div>
+              </div>
+              <div class="wf-main">
+                <div class="wf-card-mini"></div>
+                <div class="wf-card-mini"></div>
+                <div class="wf-card-mini wide"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div><!-- /floating-elements -->
+
+      <!-- ═══════════════════════════════════════════
+           PHASE 5  Skills reveal
+           ═══════════════════════════════════════════ -->
+      <div class="scrolly-skills" id="scrollySkills">
+        <div class="ss-inner">
+
+          <div class="ss-header" id="ssHeader">
+            <span class="ss-eyebrow">Expertise</span>
+            <h2 class="ss-title">Skills &amp; <span class="gradient-text">Technologies</span></h2>
+          </div>
+
+          <div class="ss-grid">
+            <div class="ss-card" id="ssC0">
+              <div class="ss-card-icon"><i class="fas fa-code"></i></div>
+              <h4 class="ss-card-title">Languages</h4>
+              <div class="ss-tags">
+                <span>JavaScript</span><span>Python</span><span>Java</span><span>PHP</span>
+              </div>
+            </div>
+            <div class="ss-card" id="ssC1">
+              <div class="ss-card-icon"><i class="fas fa-database"></i></div>
+              <h4 class="ss-card-title">Databases</h4>
+              <div class="ss-tags">
+                <span>MongoDB</span><span>MySQL</span><span>PostgreSQL</span>
+              </div>
+            </div>
+            <div class="ss-card" id="ssC2">
+              <div class="ss-card-icon"><i class="fas fa-layer-group"></i></div>
+              <h4 class="ss-card-title">Frameworks</h4>
+              <div class="ss-tags">
+                <span>React</span><span>Node.js</span><span>Express</span><span>Flask</span>
+              </div>
+            </div>
+            <div class="ss-card" id="ssC3">
+              <div class="ss-card-icon"><i class="fas fa-tools"></i></div>
+              <h4 class="ss-card-title">Tools</h4>
+              <div class="ss-tags">
+                <span>Git</span><span>VS Code</span><span>Figma</span><span>Postman</span>
+              </div>
+            </div>
+            <div class="ss-card ss-wide" id="ssC4">
+              <div class="ss-card-icon"><i class="fas fa-globe"></i></div>
+              <h4 class="ss-card-title">Web &amp; Other</h4>
+              <div class="ss-tags">
+                <span>HTML5</span><span>CSS3</span><span>REST API</span><span>Linux</span><span>Responsive Design</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div><!-- /scrolly-skills -->
+
+      <!-- ═══════════════════════════════════════════
+           PHASE 6  About Me reveal
+           ═══════════════════════════════════════════ -->
+      <div class="scrolly-about" id="scrollyAbout">
+        <div class="sa-inner">
+
+          <div class="sa-image-col" id="saImage">
+            <div class="sa-frame">
+              <img src="profile.png" alt="L.P.S Liyanage" />
+            </div>
+            <div class="sa-exp-badge">
+              <span class="gradient-text">3+</span>
+              <span>Years Coding</span>
+            </div>
+          </div>
+
+          <div class="sa-text-col" id="saText">
+            <span class="ss-eyebrow">About Me</span>
+            <h2 class="ss-title">Passionate <span class="gradient-text">Developer</span></h2>
+            <p>I'm a 3rd year Information Technology undergraduate at SLIIT, Sri Lanka. Passionate about building web applications and solving real-world problems through code.</p>
+            <p>I enjoy working across the full stack — from designing clean UIs to building solid back-end systems. Always learning, always growing as a developer.</p>
+            <div class="sa-tags">
+              <span><i class="fas fa-gamepad"></i> Video Games</span>
+              <span><i class="fas fa-code-branch"></i> Open Source</span>
+              <span><i class="fas fa-brain"></i> Problem Solving</span>
+              <span><i class="fas fa-university"></i> SLIIT</span>
+              <span><i class="fas fa-layer-group"></i> MERN Stack</span>
+            </div>
+            <a href="#contacts" class="btn-primary">Get In Touch</a>
+          </div>
+
+        </div>
+      </div><!-- /scrolly-about -->
+
+      <!-- Scroll indicator -->
+      <a href="#works" class="scroll-down" id="scrollDown">
+        <span>Scroll</span>
+        <i class="fas fa-chevron-down"></i>
+      </a>
+
+      <!-- Hero progress line -->
+      <div class="hero-progress-track">
+        <div class="hero-progress-fill" id="heroPFill"></div>
+      </div>
+
+    </section>
+  </div><!-- /scrolly-wrapper -->
 
   <!-- Projects Section -->
-  <section id="works" class="section">
+  <section id="works" class="section section--video-bg">
+    <video class="section-bg-video" autoplay muted loop playsinline>
+      <source src="assets/project-home.mp4" type="video/mp4" />
+    </video>
+    <div class="section-bg-overlay"></div>
     <div class="section-inner">
       <div class="section-label">My Work</div>
       <h2 class="section-title">Featured <span class="gradient-text">Projects</span></h2>
       <p class="section-desc">A selection of projects I've built with passion and purpose.</p>
 
       <div class="projects-grid">
+
         <div class="project-card">
           <div class="card-top">
             <div class="card-tags">
@@ -227,83 +418,6 @@ Backend runs on port 5036, frontend on port 3007.</p>
     </div>
   </section>
 
-  <!-- Skills Section -->
-  <section class="section skills-section">
-    <div class="section-inner">
-      <div class="section-label">Expertise</div>
-      <h2 class="section-title">Skills & <span class="gradient-text">Technologies</span></h2>
-
-      <div class="skills-bento">
-        <div class="skill-card">
-          <div class="skill-icon"><i class="fas fa-code"></i></div>
-          <div class="skill-title">Languages</div>
-          <div class="skill-tags">
-            <span>JavaScript</span><span>Python</span><span>Java</span><span>PHP</span>
-          </div>
-        </div>
-        <div class="skill-card">
-          <div class="skill-icon"><i class="fas fa-database"></i></div>
-          <div class="skill-title">Databases</div>
-          <div class="skill-tags">
-            <span>MySQL</span><span>MongoDB</span><span>PostgreSQL</span>
-          </div>
-        </div>
-        <div class="skill-card">
-          <div class="skill-icon"><i class="fas fa-layer-group"></i></div>
-          <div class="skill-title">Frameworks</div>
-          <div class="skill-tags">
-            <span>React</span><span>Node.js</span><span>Express</span><span>Flask</span>
-          </div>
-        </div>
-        <div class="skill-card">
-          <div class="skill-icon"><i class="fas fa-tools"></i></div>
-          <div class="skill-title">Tools</div>
-          <div class="skill-tags">
-            <span>Git</span><span>VS Code</span><span>Figma</span><span>Postman</span>
-          </div>
-        </div>
-        <div class="skill-card wide">
-          <div class="skill-icon"><i class="fas fa-globe"></i></div>
-          <div class="skill-title">Web & Other</div>
-          <div class="skill-tags">
-            <span>HTML5</span><span>CSS3</span><span>REST API</span><span>Linux</span><span>Responsive Design</span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- About Me Section -->
-  <section id="about" class="section about-section">
-    <div class="section-inner">
-      <div class="about-grid">
-        <div class="about-image-col">
-          <div class="about-frame">
-            <img src="profile.png" alt="L.P.S Liyanage" />
-          </div>
-          <div class="about-exp-card">
-            <span class="exp-num gradient-text">3+</span>
-            <span class="exp-label">Years Coding</span>
-          </div>
-        </div>
-        <div class="about-text-col">
-          <div class="section-label">About Me</div>
-          <h2 class="section-title">Passionate <span class="gradient-text">Developer</span></h2>
-          <p>I'm a 3rd year Information Technology undergraduate at SLIIT, Sri Lanka. I'm passionate about building web applications and solving real-world problems through code.</p>
-          <p>I enjoy working across the full stack — from designing clean UIs to building solid back-end systems. Always learning new technologies and growing as a developer.</p>
-          <div class="about-tags">
-            <span><i class="fas fa-gamepad"></i> Video Games</span>
-            <span><i class="fas fa-code-branch"></i> Open Source</span>
-            <span><i class="fas fa-brain"></i> Problem Solving</span>
-            <span><i class="fas fa-university"></i> SLIIT</span>
-            <span><i class="fas fa-layer-group"></i> MERN Stack</span>
-          </div>
-          <a href="#contacts" class="btn-primary">Get In Touch</a>
-        </div>
-      </div>
-    </div>
-  </section>
-
   <!-- Contacts Section -->
   <section id="contacts" class="section contacts-section">
     <div class="section-inner">
@@ -340,6 +454,14 @@ Backend runs on port 5036, frontend on port 3007.</p>
           <div>
             <div class="contact-label">GitHub</div>
             <div class="contact-val">APXs-01</div>
+          </div>
+          <i class="fas fa-arrow-right contact-arrow"></i>
+        </a>
+        <a href="https://wa.me/447883506584" target="_blank" class="contact-card contact-card--whatsapp">
+          <div class="contact-icon contact-icon--wa"><i class="fab fa-whatsapp"></i></div>
+          <div>
+            <div class="contact-label">WhatsApp</div>
+            <div class="contact-val">+44 7883 506584</div>
           </div>
           <i class="fas fa-arrow-right contact-arrow"></i>
         </a>
