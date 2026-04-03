@@ -556,6 +556,7 @@ img { display: block; max-width: 100%; }
 .card-actions a:hover { color: var(--accent); }
 
 .card-thumb {
+  display: block;
   height: 150px;
   margin: 14px 16px 0;
   border-radius: var(--r-sm);

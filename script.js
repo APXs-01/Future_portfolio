@@ -228,6 +228,24 @@
    END SCROLLYTELLING ENGINE
    ================================================================ */
 
+// ── About nav link — scroll to Phase 3 inside scrolly wrapper ──────
+(function () {
+  const navAbout = document.getElementById('navAbout');
+  const wrapper  = document.getElementById('scrollyWrapper');
+  if (!navAbout || !wrapper) return;
+
+  navAbout.addEventListener('click', function (e) {
+    e.preventDefault();
+    // Phase 3 (About) starts at p = 0.65
+    const maxScroll = wrapper.offsetHeight - window.innerHeight;
+    const targetY   = wrapper.offsetTop + maxScroll * 0.65;
+    window.scrollTo({ top: targetY, behavior: 'smooth' });
+    // close mobile menu if open
+    document.getElementById('hamburger')?.classList.remove('open');
+    document.getElementById('navLinks')?.classList.remove('open');
+  });
+})();
+
 // Hamburger menu toggle
 const hamburger = document.getElementById('hamburger');
 const navMenu   = document.getElementById('navLinks');
@@ -268,8 +286,9 @@ function updateActiveNav() {
 window.addEventListener('scroll', updateActiveNav);
 updateActiveNav();
 
-// Smooth scroll for all anchor links
+// Smooth scroll for all anchor links (skip #about — handled separately above)
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  if (anchor.getAttribute('href') === '#about') return;
   anchor.addEventListener('click', function (e) {
     const target = document.querySelector(this.getAttribute('href'));
     if (target) {
